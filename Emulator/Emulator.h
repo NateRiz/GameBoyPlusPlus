@@ -6,7 +6,7 @@
 #define GAMEBOY___EMULATOR_H
 
 #include "GL/glew.h"
-#include "GLContext.h"
+#include "../GLContext.h"
 
 class Emulator {
 

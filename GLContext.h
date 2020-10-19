@@ -18,12 +18,6 @@ public:
         // Create a Vertex Buffer Object and copy the vertex data to it
         glGenBuffers(1, &vbo);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
-        GLfloat vertices[] = {
-                0.0f, 0.5f,
-                0.5f, -0.5f,
-                -0.5f, -0.5f,
-        };
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STREAM_DRAW);
 
         // Specify the layout of the vertex data
         GLint posAttrib = glGetAttribLocation(shader.getShaderProgram(), "position");
@@ -39,10 +33,12 @@ public:
         glDeleteVertexArrays(1, &vao);
     }
 
-    void draw() const {
+    void draw(GLfloat vertices[]) const {
         // Clear the screen to black
         glClearColor(139.f/255.f, 172.f/255.f, 15.f/255.f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 6, vertices, GL_STREAM_DRAW);
 
         // Draw a triangle from the 3 vertices
         glDrawArrays(GL_TRIANGLES, 0, 3);

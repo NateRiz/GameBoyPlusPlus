@@ -1,5 +1,5 @@
 #define GLEW_STATIC
-#include "Emulator.h"
+#include "Emulator/Emulator.h"
 
 
 int main() {

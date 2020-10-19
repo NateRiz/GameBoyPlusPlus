@@ -22,7 +22,12 @@ GLboolean Emulator::getShouldQuit() const {
 }
 
 void Emulator::draw() const {
-    glContext.draw();
+    GLfloat vertices[] = {
+            0.0f, 0.5f,
+            0.5f, -0.5f,
+            -0.5f, -0.5f,
+    };
+    glContext.draw(vertices);
 }
 
 void Emulator::poll() {

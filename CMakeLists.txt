@@ -4,7 +4,7 @@ project(GameBoy__)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(GameBoy__ main.cpp Window.h DefaultShader.h Emulator.cpp Emulator.h GLContext.h)
+add_executable(GameBoy__ main.cpp Window.h DefaultShader.h Emulator/Emulator.cpp Emulator/Emulator.h GLContext.h)
 
 target_link_libraries(GameBoy__ -lSDL2 -lGL -lm -ldl -lXinerama -lXrandr -lXi -lXcursor -lX11 -lXxf86vm -lpthread -lGLEW)
 
